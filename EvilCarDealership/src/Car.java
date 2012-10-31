@@ -9,6 +9,7 @@ public class Car {
 	int x;
 	int y;
 	int deadHobos;
+	double time;
 	public Car() {
 		x = 0;
 		y =0;
