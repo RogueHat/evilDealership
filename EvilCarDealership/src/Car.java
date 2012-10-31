@@ -8,35 +8,66 @@ public class Car {
 	int speed;
 	int x;
 	int y;
+	int deadHobos;
 	public Car() {
 		x = 0;
 		y =0;
 		speed = 0;
 		charge = .99;
+		deadHobos = 0;
 	}
 	public void isInside() {
 		if(x<leftBound || x > rightBound || y < botBound || y > topBound)
 			charge += 10000;
 	}
-	public int getx() {
+	public int getX() {
 		return x;
 	}
-	public void setx(int X) {
-		x=X;
+	public void setX(int newX) {
+		x=newX;
 	}
-	public int gety() {
+	public int getY() {
 		return y;
 	}
-	public void sety(int Y) {
-		y=Y;
+	public void setY(int newY) {
+		y= newY;
 	}
 	public int getSpeed() {
-		
+		return speed;
+	}
+	public void setSpeed(int newSpeed) {
+		speed = newSpeed;
 	}
 	public double getcharge() {
 		return charge;
 	}
 	public void setCharge(double j) {
 		charge = j;
+	}
+	public int getDeadHobos() {
+		return deadHobos;
+	}
+	public void setDeadHobos(int newDeadHobos) {
+		deadHobos = newDeadHobos;
+	}
+	public void isSpeeding() {
+		if(speed > 60 && speed < 150) 
+			charge += 30000;
+		if(speed > 150)
+			charge -= 50;
+	}
+	public void hoboToll() {
+		if (getDeadHobos() < 20) 
+			charge += (getDeadHobos() * 30);
+		if (getDeadHobos() >= 20)
+			charge -= (20 * getDeadHobos());
+	}
+	public void update(int newX, int newY, int newSpeed, int newDeadHobos) {
+		setX(newX);
+		setY(newY);
+		setSpeed(newSpeed);
+		setDeadHobos(newDeadHobos);
+		isInside();
+		
 	}
 }
