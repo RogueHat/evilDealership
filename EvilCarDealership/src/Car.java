@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Car {
 	int leftBound = -100;
 	int rightBound = 100;
@@ -10,16 +10,18 @@ public class Car {
 	int y;
 	int deadHobos;
 	double time;
-	public Car() {
+	String VIN;
+	ArrayList<String> offenses = new ArrayList<String>();
+	public Car(String newVIN) {
+		VIN = newVIN;
 		x = 0;
 		y =0;
 		speed = 0;
 		charge = .99;
 		deadHobos = 0;
 	}
-	public void isInside() {
-		if(x<leftBound || x > rightBound || y < botBound || y > topBound)
-			charge += 10000;
+	public String getVIN() {
+		return VIN;
 	}
 	public int getX() {
 		return x;
@@ -42,8 +44,8 @@ public class Car {
 	public double getcharge() {
 		return charge;
 	}
-	public void setCharge(double j) {
-		charge = j;
+	public void setCharge(double newCharge) {
+		charge = newCharge;
 	}
 	public int getDeadHobos() {
 		return deadHobos;
@@ -51,24 +53,49 @@ public class Car {
 	public void setDeadHobos(int newDeadHobos) {
 		deadHobos = newDeadHobos;
 	}
-	public void isSpeeding() {
-		if(speed > 60 && speed < 150) 
+	public boolean isSpeeding() {
+		if(speed > 60 && speed < 150) {
 			charge += 30000;
+			return true;
+		}
 		if(speed > 150)
 			charge -= 50;
+		return false;
 	}
-	public void hoboToll() {
-		if (getDeadHobos() < 20) 
+	public boolean hoboToll() {
+		if (getDeadHobos() < 20) {
 			charge += (getDeadHobos() * 30);
+			return true;
+		}
 		if (getDeadHobos() >= 20)
 			charge -= (20 * getDeadHobos());
+		return false;
+	}
+	public boolean isOutside() {
+		if(x<leftBound || x > rightBound || y < botBound || y > topBound) {
+			charge += 10000;
+			return true;
+		}
+		return false;
 	}
 	public void update(int newX, int newY, int newSpeed, int newDeadHobos) {
+		String newOffense = "";
 		setX(newX);
 		setY(newY);
 		setSpeed(newSpeed);
+		newDeadHobos += getDeadHobos();
 		setDeadHobos(newDeadHobos);
-		isInside();
-		
+		if(isOutside()) {
+			newOffense = "Outside of driving boundaries "  + " with car " + getVIN();
+			offenses.add(newOffense);
+		}
+		if(isSpeeding()) {
+			newOffense = "Speeding at " + " with car " + getVIN();
+			offenses.add(newOffense);
+		}
+		if(hoboToll()) {
+			newOffense = "You killed some hobos at " + " with car " + getVIN();
+			offenses.add(newOffense);
+		}
 	}
 }
