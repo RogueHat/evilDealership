@@ -98,4 +98,7 @@ public class Car {
 			offenses.add(newOffense);
 		}
 	}
+	public void update(String str){
+		
+	}
 }

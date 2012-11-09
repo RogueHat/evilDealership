@@ -7,7 +7,7 @@ public class CarRunner{
 	public static void main(String[]args) throws IOException{
 		Scanner listen;
 		for(int t = 0;;t++){
-			listen = new Scanner(new File("car.txt"));
+			listen = new Scanner(new File("carRead.txt"));
 			
 		}
 		
