@@ -1,5 +1,15 @@
 import java.util.*;
 public class Car {
+	/**
+	 * This is Carlo Speaking
+	 * 
+	 * Please rethink some of this...
+	 * booleans should only return booleans and do nothing else.
+	 */
+	
+	
+	
+	
 	Scanner scan;
 	int leftBound = -100;
 	int rightBound = 100;
