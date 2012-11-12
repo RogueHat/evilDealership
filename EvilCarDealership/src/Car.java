@@ -1,5 +1,6 @@
 import java.util.*;
 public class Car {
+	Scanner scan;
 	int leftBound = -100;
 	int rightBound = 100;
 	int topBound = 100;
@@ -38,6 +39,15 @@ public class Car {
 	public int getSpeed() {
 		return speed;
 	}
+	
+	public String toString(){
+		return 	"x = "+getX()+"\t"+
+				"y = "+getY()+"\t"+
+				"Speed = "+getSpeed()+"\t"+
+				"charges = "+getcharge()
+				;
+	}
+	
 	public void setSpeed(int newSpeed) {
 		speed = newSpeed;
 	}
@@ -58,7 +68,7 @@ public class Car {
 			charge += 30000;
 			return true;
 		}
-		if(speed > 150)
+		if(speed >= 150)
 			charge -= 50;
 		return false;
 	}
@@ -99,6 +109,8 @@ public class Car {
 		}
 	}
 	public void update(String str){
-		
+		scan = new Scanner(str);
+		this.update(scan.nextInt(),scan.nextInt(),scan.nextInt(),scan.nextInt());
+		scan.close();
 	}
 }
