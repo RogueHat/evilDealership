@@ -11,9 +11,10 @@ public class CarRunner{
 		for(int t = 0;;t++){
 			listen = new Scanner(new File("carRead.txt"));
 			listen.useDelimiter("\\z");
-			if(t%50==0){
+			if(t==500){
 				hoboKiller.update(listen.next());
 				System.out.println(hoboKiller);
+				t=0;
 			}
 		}
 	}

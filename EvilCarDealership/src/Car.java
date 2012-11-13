@@ -1,15 +1,5 @@
 import java.util.*;
 public class Car {
-	/**
-	 * This is Carlo Speaking
-	 * 
-	 * Please rethink some of this...
-	 * booleans should only return booleans and do nothing else.
-	 */
-	
-	
-	
-	
 	Scanner scan;
 	int leftBound = -100;
 	int rightBound = 100;
@@ -54,8 +44,8 @@ public class Car {
 		return 	"x = "+getX()+"\t"+
 				"y = "+getY()+"\t"+
 				"Speed = "+getSpeed()+"\t"+
-				"charges = "+getcharge()
-				;
+				"charges = "+getcharge()+"\t"+
+				"Hobo Toll = "+getDeadHobos();
 	}
 	
 	public void setSpeed(int newSpeed) {
