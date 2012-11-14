@@ -8,10 +8,7 @@ import javax.swing.JPanel;
 
 
 
-public class Panel extends JPanel implements Runnable {
-
-	// use an array of Molecule
-	// Molecule[] molecules;
+public class Panel extends JPanel implements Runnable {;
 	Car car;
 	Scanner listen;
 
