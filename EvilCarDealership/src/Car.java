@@ -41,10 +41,10 @@ public class Car {
 	}
 	
 	public String toString(){
-		return 	"x = "+getX()+"\t"+
-				"y = "+getY()+"\t"+
-				"Speed = "+getSpeed()+"\t"+
-				"charges = "+getcharge()+"\t"+
+		return 	"x = "+getX()+"\t "+
+				"y = "+getY()+"\t "+
+				"Speed = "+getSpeed()+"\t "+
+				"charges = "+getcharge()+"\t "+
 				"Hobo Toll = "+getDeadHobos();
 	}
 	
