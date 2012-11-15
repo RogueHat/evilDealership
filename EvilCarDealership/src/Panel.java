@@ -11,11 +11,13 @@ import javax.swing.JPanel;
 public class Panel extends JPanel implements Runnable {;
 	Car car;
 	Scanner listen;
+	int minutes;
 
 	public Panel(Car newCar) {
 		setBackground(Color.WHITE);
 		setVisible(true);
 		car=newCar;
+		minutes=0;
 		
 		new Thread(this).start();
 	}
@@ -29,13 +31,15 @@ public class Panel extends JPanel implements Runnable {;
 		window.fillRect(0, 0, getWidth(), getHeight());
 		window.setColor(Color.gray);
 		window.setFont(new Font("TAHOMA",Font.BOLD,30));
-		window.drawString(car.toString(), 40, 40);
+		window.drawString(car.toString()+" time = "+minutes, 40, 40);
+		minutes++;
 	}
 
 	public void run() {
 		try {
 			while (true) {
-				Thread.currentThread().sleep(0);
+				
+				Thread.currentThread().sleep(100);
 				listen = new Scanner(new File("carRead.txt"));
 				listen.useDelimiter("\\z");
 				car.update(listen.next());
