@@ -1,6 +1,5 @@
 import java.util.*;
 public class Car {
-	//asdf
 	Scanner scan;
 	int leftBound = -100;
 	int rightBound = 100;
