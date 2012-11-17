@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.io.File;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 
@@ -12,12 +13,19 @@ public class Panel extends JPanel implements Runnable {;
 	Car car;
 	Scanner listen;
 	int minutes;
-
+	JButton listGet;
+	JButton pause;
+	
 	public Panel(Car newCar) {
 		setBackground(Color.WHITE);
 		setVisible(true);
 		car=newCar;
 		minutes=0;
+		
+		listGet = new JButton("Get latest offense list");
+		pause = new JButton("Pause");
+		
+		
 		
 		new Thread(this).start();
 	}

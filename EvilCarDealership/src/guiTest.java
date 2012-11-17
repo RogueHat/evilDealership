@@ -1,8 +1,10 @@
+import java.awt.BorderLayout;
+
 import javax.swing.*;
 
 public class guiTest extends JFrame {
 	private static final int WIDTH = 1600;
-	private static final int HEIGHT = 100;
+	private static final int HEIGHT = 200;
 
 	public guiTest()
 	{
@@ -11,7 +13,9 @@ public class guiTest extends JFrame {
 		setSize(WIDTH,HEIGHT);
 		
 		Car hoboKiller = new Car("57862347");
-		getContentPane().add(new Panel(hoboKiller));
+		Panel pnl = new Panel(hoboKiller);
+		getContentPane().add(pnl);
+		
 
 		setVisible(true);
 
