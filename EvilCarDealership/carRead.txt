@@ -1,2 +1,2 @@
-7 8 90 0 57862347 7:47
-// x, y, speed, dead hobos, VIN, time
+57862347 7 8 90 0
+//  x, y, speed, dead hobos, 
