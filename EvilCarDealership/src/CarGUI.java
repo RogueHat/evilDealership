@@ -81,16 +81,16 @@ public class CarGUI extends JFrame implements Runnable {
 				Thread.currentThread().sleep(1000);
 				
 				if(!isPaused){
-					hoboKiller.update(new File("carRead.txt"));
+					hoboKiller.move(new File("carRead.txt"));
 					charge.payUp(time);
-					output.setText("time = "+time+"\n"+hoboKiller.toString()+"\n"+charge.toString()+"\n");
+					output.setText("time =\t"+time+"\n"+hoboKiller+"\n"+charge+"\n");
 					
 					time++;
 				}
 				this.pack();
 			}
 		}catch(Exception er){
-			
+			System.err.println(er);
 		}
 	}
 	

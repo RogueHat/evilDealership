@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Charges {
 	private final int 	
-		HALFSIDE 	= 50, 
+		HALFSIDE 	= 1000, 
 		OUTCHARGE 	= 10000,
 		SPDCHARGE	= 30000;
 	
