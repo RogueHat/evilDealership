@@ -36,12 +36,12 @@ public class Car {
 	}
 	
 	public String toString(){
-		return  VIN+" \t"+
-				"x = "+x+" \t"+
-				"y = "+y+" \t"+
-				"speed = "+spd+" \t"+
-				"Hobos Killed = "+kills+" \t"+
-				"Total Kills ="+allKills;
+		return  "VIN =\t"+VIN+" \n"+
+				"x =\t"+x+" \n"+
+				"y =\t"+y+" \n"+
+				"speed =\t"+spd+" \n"+
+				"Hobo Kills =\t"+kills+" \n"+
+				"Total Kills =\t"+allKills;
 	}
 	
 }

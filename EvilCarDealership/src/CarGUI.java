@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class CarGUI extends JFrame implements Runnable {
-	private JLabel labels, output;
-	private JTextArea list;
+	private JLabel labels/*, output*/;
+	private JTextArea list,output;
 	private JScrollPane listPane;
 	//private ArrayList<JLabel> list = new ArrayList<JLabel>();
-	private JButton pause, showList;
+	private JMenuItem pause, showList;
+	private JMenuBar bar;
 	private boolean isPaused=true;
 	private Car hoboKiller;
 	private int time = 1;
@@ -25,17 +26,23 @@ public class CarGUI extends JFrame implements Runnable {
 		// labels= new JLabel("");
 		// add(labels);
 
-		output = new JLabel();
+		output = new JTextArea(10,15);
+		output.setLineWrap(true);
+		output.setWrapStyleWord( true );
 		output.setFont(new Font("Serif", Font.BOLD, 20));
 		add(output);
 
-		pause = new JButton("Start");
-		add(pause);
+		bar = new JMenuBar();
+		
+		pause = new JMenuItem("Start");
+		bar.add(pause);
 
-		showList = new JButton("Show Offense List");
-		add(showList);
+		showList = new JMenuItem("Show Offense List");
+		bar.add(showList);
+		
+		setJMenuBar(bar);
 
-		list = new JTextArea(20,40);
+		list = new JTextArea(17,31);
 		list.setLineWrap(true);
 		list.setWrapStyleWord( true );
 		listPane = new JScrollPane(list);
@@ -56,7 +63,7 @@ public class CarGUI extends JFrame implements Runnable {
 					pause.setText("Pause");
 				} else {
 					isPaused = true;
-					pause.setText("Starte");
+					pause.setText("Start");
 				}
 			}
 			if (e.getSource() == showList) {
@@ -70,12 +77,13 @@ public class CarGUI extends JFrame implements Runnable {
 		// TODO Auto-generated method stub
 		try{
 			while(true){
-				Thread.currentThread().sleep(time/2);
+				//Thread.currentThread().sleep(time/2);
+				Thread.currentThread().sleep(1000);
 				
 				if(!isPaused){
 					hoboKiller.update(new File("carRead.txt"));
 					charge.payUp(time);
-					output.setText(hoboKiller.toString()+"\t "+charge.toString()+"\n");
+					output.setText("time = "+time+"\n"+hoboKiller.toString()+"\n"+charge.toString()+"\n");
 					
 					time++;
 				}

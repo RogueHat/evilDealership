@@ -46,7 +46,7 @@ public class Charges {
 		totalCharges+=newCharges;
 	}
 	public String toString(){
-		return "Charges = "+totalCharges;
+		return "Charges =\t"+totalCharges;
 	}
 	public String getList(){
 		String out="";
