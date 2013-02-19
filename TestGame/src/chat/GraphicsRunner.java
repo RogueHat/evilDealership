@@ -17,22 +17,22 @@ public class GraphicsRunner extends JFrame
 		setSize(WIDTH,HEIGHT);
 
 		getContentPane().add(new NetworkDraw());
-		this.actionListener(new Event());
+		//this.actionListener(new Event());
 		
 		setVisible(true);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	public class Event implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
+//	public class Event implements ActionListener{
+//
+//		@Override
+//		public void actionPerformed(ActionEvent arg0) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//		
+//	}
 
 	public static void main( String args[] )
 	{
